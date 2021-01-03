@@ -87,6 +87,81 @@ class Primary:
 
         "cosmic insight" : (320,760),
         "approach velocity"	: (400,760),
-        "time warp tonic" : (500,760),
+        "time warp tonic" : (500,760)
     }
 
+
+class Secondary:
+    precision = {
+        "overheal" : (730,380),
+        "triumph" :	(810,380),
+        "presence of mind" : (890,380),
+
+        "legend: alacrity" : (730,480),
+        "legend: tenacity" : (810,480),
+        "legend: bloodline" : (890,480),
+
+        "coup de grace" : (730,575),
+        "cut down" : (810,575),
+        "cast stand" : (890,575),
+
+    }
+    domination = {
+        "cheap shot" : (730,380),
+        "taste of blood" : (810,380),
+        "sudden impact"	 : (890,380),
+
+        "zombie ward" :	(730,480),
+        "ghost poro" :	(810,480),
+        "eyeball collection" : (890,480),
+
+        "ravenous hunter" :	(720,575),
+        "ingenious hunter" : (780,575),
+        "relentless hunter" : (850,575),
+        "ultimate hunter" :	(910,575)
+
+
+    }
+    sourcery = {
+        "nullifiying orb" : (730,380),
+        "manaflow band" :	(810,380),
+        "nimbus cloak" : (890,380),
+
+        "transcendence"	: (730,480),
+        "celerity" : (810,480),
+        "absolute focus" : (890,480),
+
+        "scorch" : (730,575),
+        "waterwalking" : (810,575),
+        "gathering storm" : (890,575)
+
+
+    }
+    resolve = {
+        "demolish" : (730,380),
+        "font of life" : (810,380),
+        "shield bash" : (890,380),
+
+        "conditioning" : (730,480),
+        "second wind" : (810,480),
+        "bone plating" : (890,480),
+
+        "overgrowth" :	(730,575),
+        "revitalize" : (810,575),
+        "unflinching" : (890,575)
+
+
+    }
+    inspiration = {
+        "hextech flashtraption" : (730,380),
+        "magical footwear" : (810,380),
+        "perfect timing" : (890,380),
+
+        "future market"	: (730,480),
+        "minion dematerializer": (810,480),
+        "biscuit delivery": (890,480),
+
+        "cosmic insight" : (730,575),
+        "approach velocity"	: (810,575),
+        "time warp tonic" : (890,575)
+    }
