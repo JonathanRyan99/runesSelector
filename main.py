@@ -3,6 +3,7 @@
 
 import win32gui
 import pyautogui
+import runes
 
 
 #finds league window brings it to the front
@@ -21,11 +22,16 @@ def select(x,y):
     pyautogui.moveTo( (x+winPos[0]), (y+winPos[1]) , duration= 0.5)
     pyautogui.click()
 
-#precise,press the attack,triumph,bloodline,cutdown
-x = [300,320,400,500,400]
-y = [275,420,540,650,760]
+def select(coord):
+    pyautogui.moveTo( (coord[0]+winPos[0]), (coord[1]+winPos[1]) , duration= 0.5)
+    pyautogui.click()
 
-for i in range(len(x)):
-    select(x[i],y[i])
+
+P = runes.Primary()
+
+select(P.precision["lethal tempo"])
+
+#for i in range(len(5)):
+#    select(x[i],y[i])
     
 
