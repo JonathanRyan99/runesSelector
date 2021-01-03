@@ -29,9 +29,11 @@ def select(coord):
 
 P = runes.Primary()
 
-select(P.precision["lethal tempo"])
+myselection = ["press the attack","overheal", "legend: bloodline", "cut Down"]
 
-#for i in range(len(5)):
-#    select(x[i],y[i])
+
+
+for i in range(len(myselection)):
+    select(P.precision[myselection[i]])
     
 
