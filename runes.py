@@ -1,3 +1,21 @@
+class Path:
+    primary = {
+        "precision" : (300,275),
+        "domination" : (350,275),
+        "sorcery" : (400,275),
+        "resolve" : (450,275),
+        "inspiration" : (500,275)
+    }
+    secondary = {
+        "r1" : (720,275),
+        "r2" : (780,275),
+        "r3" : (840,275),
+        "r4" : (900, 275)
+    }
+
+    
+    
+
 class Primary:
     #NO CAPITALS!!! 
     #NAME : X , Y
@@ -38,7 +56,7 @@ class Primary:
         "relentless hunter" :	(440,760),
         "ultimate hunter" :	(500,760)
     }
-    sourcery = {
+    sorcery = {
         "summon aery" : (320,420),
         "arcane comet" : (400,420),
         "phase rush" : (500,420),

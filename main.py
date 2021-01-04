@@ -28,17 +28,20 @@ def select(coord):
 
 
 P = runes.Primary()
+S = runes.Secondary()
+path = runes.Path()
+
+for item in path.secondary.values():
+    select(item)
+
+
+
 
 #myselection = ["press the attack","overheal", "legend: bloodline", "cut Down"]
 
-for item in runes.Secondary.sourcery.values():
-    select(item)
+#for item in runes.Secondary.sourcery.values():
+#    select(item)
 
-for item in runes.Secondary.resolve.values():
-    select(item)
-
-for item in runes.Secondary.inspiration.values():
-    select(item)
 
 #for i in range(len(myselection)):
 #    select(P.precision[myselection[i]])
