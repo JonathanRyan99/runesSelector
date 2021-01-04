@@ -31,11 +31,13 @@ P = runes.Primary()
 S = runes.Secondary()
 path = runes.Path()
 
-for item in path.secondary.values():
-    select(item)
+path1, path2 = path.getPaths("precision","resolve")
 
+print(path1)
+print(path2)
 
-
+select(path1)
+select(path2)
 
 #myselection = ["press the attack","overheal", "legend: bloodline", "cut Down"]
 
