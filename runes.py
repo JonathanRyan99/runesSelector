@@ -13,6 +13,7 @@ class Path:
         "r4" : (900, 275)
     }
 
+    #secondary paths avaliblity is dependent on the first so have to cal where it will be 
     def getPaths(self, primaryPath,SecondaryPath):
         orginal = ['precision','domination','sorcery','resolve','inspiration']
         ref = ['r1','r2','r3','r4']
@@ -193,4 +194,24 @@ class Secondary:
         "cosmic insight" : (730,575),
         "approach velocity"	: (810,575),
         "time warp tonic" : (890,575)
+    }
+
+
+class modifyers: 
+    offense = {
+    "adaptive force" : (730,650),
+    "attack speed" : (810,650),
+    "ability haste" : (890,650),
+    }
+    
+    flex = {
+    "adaptive force" : (730,700),
+    "armour" : (810,700),
+    "magic resist" : (890,700),
+    }
+
+    defence = {
+    "health" : (730,760),
+    "armour" : (810,760),
+    "magic resist" : (890,760)
     }

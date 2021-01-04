@@ -26,24 +26,27 @@ def select(coord):
     pyautogui.moveTo( (coord[0]+winPos[0]), (coord[1]+winPos[1]) , duration= 0.5)
     pyautogui.click()
 
-
+Path = runes.Path()
 P = runes.Primary()
 S = runes.Secondary()
-path = runes.Path()
+M = runes.modifyers()
+
 
 path1, path2 = path.getPaths("precision","resolve")
 
-print(path1)
-print(path2)
+#print(path1)
+#print(path2)
 
-select(path1)
-select(path2)
+#select(path1)
+#select(path2)
 
 #myselection = ["press the attack","overheal", "legend: bloodline", "cut Down"]
 
 #for item in runes.Secondary.sourcery.values():
 #    select(item)
 
+for item in runes.modifyers.offense.values():
+    select(item)
 
 #for i in range(len(myselection)):
 #    select(P.precision[myselection[i]])
