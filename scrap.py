@@ -13,5 +13,12 @@ primaryRuneBlock = soup.find("div", {"class": "new-runes__primary"})
 #print(primaryRuneBlock)
 
 primaryPath = primaryRuneBlock.get("path")
+primaryRunesHtml = primaryRuneBlock.find_all("span")
+primaryRunes = []
+for i in range(len(primaryRunesHtml)):
+    primaryRunes.append(primaryRunesHtml[i].text)
+
+primaryRunes.pop(0)
 
 print(primaryPath)
+print(primaryRunes)
