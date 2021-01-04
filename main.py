@@ -5,6 +5,21 @@ import win32gui
 import pyautogui
 import runes
 
+def readfile(name):
+    path = name + ".txt"
+    with open(path) as f:
+        lines = f.read().splitlines()
+    
+    return lines
+
+#get file
+file = input("enter file name: ")
+print(" ")
+print("READING FILE: ",file)
+input = readfile(file)
+
+
+
 
 #finds league window brings it to the front
 leagueWindow = win32gui.FindWindow("RCLIENT", None)
@@ -15,35 +30,43 @@ print("window displacement: x:",winPos[0]," y:",winPos[1])
 
 
 
-def readfile(name):
-    
-    path = name + ".txt"
-    
-    with open(path) as f:
-        lines = f.read().splitlines()
-    
-    return lines
+
 
 #add window displacement to relative coords
 def select(coord):
     pyautogui.moveTo( (coord[0]+winPos[0]), (coord[1]+winPos[1]) , duration= 0.5)
     pyautogui.click()
 
+
+#input structure: (includes the name ones)
+#[Path1,Path2,Primary runes,#,#,#,Secondaryrunes,#,#,modifyers,#,#]
+
+
+
 Path = runes.Path()
 P = runes.Primary()
 S = runes.Secondary()
 M = runes.modifyers()
 
-#input structure: (includes the name ones)
-#[Path1,Path2,Primary runes,#,#,#,Secondaryrunes,#,#,modifyers,#,#]
 
-input1 = ["precision", "resolve","press the attack", "presence of mind", "legend: alacrity", "cut down", "demolish", "second wind", "attack speed","adaptive force","armor"]
-input2 = ["domination","resolve","hail of blades","taste of blood","eyeball collection","ravenous hunter"]
 
-input = readfile("jinx")
+#open rune editor
+exitButton = (1460,100)
+save = (640,163)
+editButton = (550,860)
+nameBar = (702,850)
+choosenSlot = (700,600)
+
+#opens up the rune editor
+print(" ")
+print("OPENING RUNE EDTOR")
+select(nameBar)
+select(choosenSlot)
+select(editButton)
+
+
 
 #selectable locations for paths
-
 print(" ")
 print("PATHS: ")
 print("PRIMARY: ",input[0])
@@ -158,6 +181,12 @@ select(M.flex[input[9]])
 
 print("Defence :", input[10])
 select(M.defence[input[10]])
+
+
+print(" ")
+print("SAVE AND EXIT")
+select(save)
+select(exitButton)
 
 
 print("")
