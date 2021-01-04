@@ -17,10 +17,9 @@ class Path:
     def getPaths(self, primaryPath,SecondaryPath):
         orginal = ['precision','domination','sorcery','resolve','inspiration']
         ref = ['r1','r2','r3','r4']
-        print(orginal)
+    
         orginal.remove(primaryPath)
-        print(orginal)
-
+        
         SecondaryPath = ref[orginal.index(SecondaryPath)]
 
         return self.primary[primaryPath] , self.secondary[SecondaryPath]
