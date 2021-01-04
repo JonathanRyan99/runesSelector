@@ -212,6 +212,6 @@ class modifyers:
 
     defence = {
     "health" : (730,760),
-    "armour" : (810,760),
+    "armor" : (810,760),
     "magic resist" : (890,760)
     }
