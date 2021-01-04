@@ -1,5 +1,7 @@
 #uses"pip install pywin32"
-#uses "import pyautogui"
+#uses "pip install PyAutoGUI"
+#uses "pip install beautifulsoup4"
+#uses "pip install requests"
 import os
 import win32gui
 import pyautogui
