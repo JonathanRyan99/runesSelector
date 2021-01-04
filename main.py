@@ -11,14 +11,13 @@ leagueWindow = win32gui.FindWindow("RCLIENT", None)
 win32gui.SetForegroundWindow(leagueWindow )
 
 winPos = win32gui.GetWindowRect(leagueWindow)
-print("window displays: x:",winPos[0]," y:",winPos[1])
-#print("top: ",winPos[0]) # x
-#print("left: ",winPos[1]) # y
+print("window displacement: x:",winPos[0]," y:",winPos[1])
 
 
 
 
 
+#add window displacement to relative coords
 def select(coord):
     pyautogui.moveTo( (coord[0]+winPos[0]), (coord[1]+winPos[1]) , duration= 0.5)
     pyautogui.click()
@@ -31,7 +30,7 @@ M = runes.modifyers()
 #input structure: (includes the name ones)
 #[Path1,Path2,Primary runes,#,#,#,Secondaryrunes,#,#,modifyers,#,#]
 
-input1 = ["precision", "resolve","press the attack", "presence of mind", "legend: alacrity", "cut down", "demolish", "second wind", "overgrowth","attack speed","adaptive force","armor"]
+input1 = ["precision", "resolve","press the attack", "presence of mind", "legend: alacrity", "cut down", "demolish", "second wind", "attack speed","adaptive force","armor"]
 input2 = ["domination","resolve","hail of blades","taste of blood","eyeball collection","ravenous hunter"]
 
 input = input1
@@ -100,7 +99,7 @@ print("SECONDARY RUNES: ")
 
 if input[1] == "precision":
     x = 6
-    for i in range(3):
+    for i in range(2):
         print("Precision: ",input[x])
         select(S.precision.get(input[x]))
         x = x + 1
@@ -108,7 +107,7 @@ if input[1] == "precision":
 
 if input[1] == "domination":
     x = 6
-    for i in range(3):
+    for i in range(2):
         print("Domination: ",input[x])
         select(S.domination.get(input[x]))
         x = x + 1 
@@ -116,7 +115,7 @@ if input[1] == "domination":
 
 if input[1] == "sorcery":
     x = 6
-    for i in range(3):
+    for i in range(2):
         print("Sorcery: ",input[x])
         select(S.sorcery.get(input[x]))
         x = x + 1 
@@ -124,7 +123,7 @@ if input[1] == "sorcery":
 
 if input[1] == "resolve":
     x = 6
-    for i in range(3):
+    for i in range(2):
         print("Resolve: ",input[x])
         select(S.resolve.get(input[x]))
         x = x + 1 
@@ -132,7 +131,7 @@ if input[1] == "resolve":
 
 if input[1] == "inspiration":
     x = 6
-    for i in range(3):
+    for i in range(2):
         print("Inspiration: ",input[x])
         select(S.inspiration.get(input[x]))
         x = x + 1 
@@ -144,14 +143,14 @@ print(" ")
 print("MODIFYERS: ")
 
 
-print("Offence: ", input[9])
-select(M.offense[input[9]])
+print("Offence: ", input[8])
+select(M.offense[input[8]])
 
-print("Flex: ", input[10])
-select(M.flex[input[10]])
+print("Flex: ", input[9])
+select(M.flex[input[9]])
 
-print("Defence :", input[11])
-select(M.defence[input[11]])
+print("Defence :", input[10])
+select(M.defence[input[10]])
 
 
 print("")

@@ -13,7 +13,7 @@ class Path:
         "r4" : (900, 275)
     }
 
-    #secondary paths avaliblity is dependent on the first so have to cal where it will be 
+    #secondary paths avaliblity is dependent on the first so have to calculate where it will be 
     def getPaths(self, primaryPath,SecondaryPath):
         orginal = ['precision','domination','sorcery','resolve','inspiration']
         ref = ['r1','r2','r3','r4']
