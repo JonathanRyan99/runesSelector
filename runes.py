@@ -151,7 +151,7 @@ class Secondary:
 
 
     }
-    sourcery = {
+    sorcery = {
         "nullifiying orb" : (730,380),
         "manaflow band" :	(810,380),
         "nimbus cloak" : (890,380),

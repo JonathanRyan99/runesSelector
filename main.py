@@ -1,6 +1,6 @@
 #uses"pip install pywin32"
 #uses "import pyautogui"
-
+import os
 import win32gui
 import pyautogui
 import runes
@@ -15,7 +15,14 @@ print("window displacement: x:",winPos[0]," y:",winPos[1])
 
 
 
-
+def readfile(name):
+    
+    path = name + ".txt"
+    
+    with open(path) as f:
+        lines = f.read().splitlines()
+    
+    return lines
 
 #add window displacement to relative coords
 def select(coord):
@@ -33,7 +40,7 @@ M = runes.modifyers()
 input1 = ["precision", "resolve","press the attack", "presence of mind", "legend: alacrity", "cut down", "demolish", "second wind", "attack speed","adaptive force","armor"]
 input2 = ["domination","resolve","hail of blades","taste of blood","eyeball collection","ravenous hunter"]
 
-input = input1
+input = readfile("jinx")
 
 #selectable locations for paths
 
