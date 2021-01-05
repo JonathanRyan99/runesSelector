@@ -4,8 +4,7 @@ import requests
 
 def mobifireBuild(url):
 
-    #url = input("please link mobifire page: ")
-    #url = "https://www.mobafire.com/league-of-legends/build/10-23-hanjaros-velkoz-supporting-your-way-to-challenger-553890"
+    
     req = requests.get(url)
     soup = BeautifulSoup(req.text, "html.parser")
 
@@ -47,7 +46,7 @@ def mobifireBuild(url):
         "time" : "ability haste",
         "shield" : "armor",
         "heart" : "health",
-        #magic resist
+        "circle" : "magic resist"
     }
 
     bonusBlock = runeBlock.find("div", {"class": "new-runes__shards"})
