@@ -53,7 +53,7 @@ bonus = []
 #bonus span tags differ from acutal names so must be converted
 for i in range(len(bonusHtml)):
     bonus.append( bonusDict[bonusHtml[i].get("shard-type")] )
-print(bonus)
+#print(bonus)
 
 
 
@@ -61,9 +61,13 @@ print(bonus)
 
 
 
-#runepage = []
-#runepage.append(primaryPath)
-#runepage.append(secondaryPath)
-#runepage.extend(primaryRunes)
+runepage = []
+runepage.append(primaryPath)
+runepage.append(secondaryPath)
+runepage.extend(primaryRunes)
+runepage.extend(secondaryRunes)
+runepage.extend(bonus)
 
-#print(runepage)
+#main runes script is all lower case so conversion is necessary
+runepage = [element.lower() for element in runepage]
+print(runepage)
