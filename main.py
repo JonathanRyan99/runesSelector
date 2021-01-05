@@ -8,25 +8,19 @@ import pyautogui
 import runes
 import scrap
 
-def readfile(name):
+def readfile():
+    name = input("file name: ")
     path = name + ".txt"
     with open(path) as f:
-        lines = f.read().splitlines()
-    
+        lines = f.read().splitlines()    
     return lines
 
-#get file
-def fileInput():
-    file = input("enter file name: ")
-    print(" ")
-    print("READING FILE: ",file)
-    input = readfile(file)
-    return input
+#uses file
+#userRunes = readfile()
 
-
- 
-
-
+#uses link
+url = input("mobafire link: ")
+userRunes = scrap.mobifireBuild(url)
 
 
 #finds league window brings it to the front
@@ -46,7 +40,7 @@ def select(coord):
     pyautogui.click()
 
 
-#input structure: (includes the name ones)
+#userRunes structure: (includes the name ones)
 #[Path1,Path2,Primary runes,#,#,#,Secondaryrunes,#,#,modifyers,#,#]
 
 
@@ -77,9 +71,9 @@ select(editButton)
 #selectable locations for paths
 print(" ")
 print("PATHS: ")
-print("PRIMARY: ",input[0])
-print("SECONDARY: ",input[1])
-pathPos1, pathPos2 = Path.getPaths(input[0],input[1])
+print("PRIMARY: ",userRunes[0])
+print("SECONDARY: ",userRunes[1])
+pathPos1, pathPos2 = Path.getPaths(userRunes[0],userRunes[1])
 select(pathPos1)
 select(pathPos2)
 
@@ -87,43 +81,43 @@ select(pathPos2)
 print("")
 print("PRIMAY RUNES: ")
 
-if input[0] == "precision":
+if userRunes[0] == "precision":
     x = 2
     for i in range(4):
-        print("Precision: ",input[x])
-        select(P.precision.get(input[x]))
+        print("Precision: ",userRunes[x])
+        select(P.precision.get(userRunes[x]))
         x = x + 1
     pass
 
-if input[0] == "domination":
+if userRunes[0] == "domination":
     x = 2
     for i in range(4):
-        print("Domination: ",input[x])
-        select(P.domination.get(input[x]))
+        print("Domination: ",userRunes[x])
+        select(P.domination.get(userRunes[x]))
         x = x + 1 
     pass
 
-if input[0] == "sorcery":
+if userRunes[0] == "sorcery":
     x = 2
     for i in range(4):
-        print("Sorcery: ",input[x])
-        select(P.sorcery.get(input[x]))
+        print("Sorcery: ",userRunes[x])
+        select(P.sorcery.get(userRunes[x]))
         x = x + 1 
     pass
 
-if input[0] == "resolve":
+if userRunes[0] == "resolve":
     x = 2
     for i in range(4):
-        print("Resolve: ",input[x])
-        select(P.resolve.get(input[x]))
+        print("Resolve: ",userRunes[x])
+        select(P.resolve.get(userRunes[x]))
         x = x + 1 
     pass
 
-if input[0] == "inspiration":
+if userRunes[0] == "inspiration":
     x = 2
     for i in range(4):
-        print("Inspiration: ",input[x])
-        select(P.inspiration.get(input[x]))
+        print("Inspiration: ",userRunes[x])
+        select(P.inspiration.get(userRunes[x]))
         x = x + 1 
     pass
 
@@ -135,43 +129,43 @@ if input[0] == "inspiration":
 print("")
 print("SECONDARY RUNES: ")
 
-if input[1] == "precision":
+if userRunes[1] == "precision":
     x = 6
     for i in range(2):
-        print("Precision: ",input[x])
-        select(S.precision.get(input[x]))
+        print("Precision: ",userRunes[x])
+        select(S.precision.get(userRunes[x]))
         x = x + 1
     pass
 
-if input[1] == "domination":
+if userRunes[1] == "domination":
     x = 6
     for i in range(2):
-        print("Domination: ",input[x])
-        select(S.domination.get(input[x]))
+        print("Domination: ",userRunes[x])
+        select(S.domination.get(userRunes[x]))
         x = x + 1 
     pass
 
-if input[1] == "sorcery":
+if userRunes[1] == "sorcery":
     x = 6
     for i in range(2):
-        print("Sorcery: ",input[x])
-        select(S.sorcery.get(input[x]))
+        print("Sorcery: ",userRunes[x])
+        select(S.sorcery.get(userRunes[x]))
         x = x + 1 
     pass
 
-if input[1] == "resolve":
+if userRunes[1] == "resolve":
     x = 6
     for i in range(2):
-        print("Resolve: ",input[x])
-        select(S.resolve.get(input[x]))
+        print("Resolve: ",userRunes[x])
+        select(S.resolve.get(userRunes[x]))
         x = x + 1 
     pass
 
-if input[1] == "inspiration":
+if userRunes[1] == "inspiration":
     x = 6
     for i in range(2):
-        print("Inspiration: ",input[x])
-        select(S.inspiration.get(input[x]))
+        print("Inspiration: ",userRunes[x])
+        select(S.inspiration.get(userRunes[x]))
         x = x + 1 
     pass
 
@@ -181,14 +175,14 @@ print(" ")
 print("BONUS: ")
 
 
-print("Offence: ", input[8])
-select(B.offense[input[8]])
+print("Offence: ", userRunes[8])
+select(B.offense[userRunes[8]])
 
-print("Flex: ", input[9])
-select(B.flex[input[9]])
+print("Flex: ", userRunes[9])
+select(B.flex[userRunes[9]])
 
-print("Defence :", input[10])
-select(B.defence[input[10]])
+print("Defence :", userRunes[10])
+select(B.defence[userRunes[10]])
 
 
 print(" ")
