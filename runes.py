@@ -196,7 +196,7 @@ class Secondary:
     }
 
 
-class modifyers: 
+class Bonus: 
     offense = {
     "adaptive force" : (730,650),
     "attack speed" : (810,650),

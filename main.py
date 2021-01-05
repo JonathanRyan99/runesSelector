@@ -48,7 +48,7 @@ def select(coord):
 Path = runes.Path()
 P = runes.Primary()
 S = runes.Secondary()
-M = runes.modifyers()
+B = runes.Bonus()
 
 
 
@@ -172,17 +172,17 @@ if input[1] == "inspiration":
 
 #select modifyers
 print(" ")
-print("MODIFYERS: ")
+print("BONUS: ")
 
 
 print("Offence: ", input[8])
-select(M.offense[input[8]])
+select(B.offense[input[8]])
 
 print("Flex: ", input[9])
-select(M.flex[input[9]])
+select(B.flex[input[9]])
 
 print("Defence :", input[10])
-select(M.defence[input[10]])
+select(B.defence[input[10]])
 
 
 print(" ")
