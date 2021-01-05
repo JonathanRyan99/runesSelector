@@ -6,6 +6,7 @@ import os
 import win32gui
 import pyautogui
 import runes
+import scrap
 
 def readfile(name):
     path = name + ".txt"
@@ -15,10 +16,15 @@ def readfile(name):
     return lines
 
 #get file
-file = input("enter file name: ")
-print(" ")
-print("READING FILE: ",file)
-input = readfile(file)
+def fileInput():
+    file = input("enter file name: ")
+    print(" ")
+    print("READING FILE: ",file)
+    input = readfile(file)
+    return input
+
+
+ 
 
 
 
