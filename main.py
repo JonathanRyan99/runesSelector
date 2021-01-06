@@ -34,14 +34,11 @@ print("window displacement: x:",winPos[0]," y:",winPos[1])
 
 
 
-#add window displacement to relative coords
+#add window displacement to relative coords and click
 def select(coord):
     pyautogui.moveTo( (coord[0]+winPos[0]), (coord[1]+winPos[1]) , duration= 0.5)
     pyautogui.click()
 
-
-#userRunes structure: (includes the name ones)
-#[Path1,Path2,Primary runes,#,#,#,Secondaryrunes,#,#,modifyers,#,#]
 
 
 
@@ -52,7 +49,7 @@ B = runes.Bonus()
 
 
 
-#open rune editor
+#league interface coords
 exitButton = (1460,100)
 save = (640,163)
 editButton = (550,860)
@@ -68,7 +65,7 @@ select(editButton)
 
 
 
-#selectable locations for paths
+#select Paths
 print(" ")
 print("PATHS: ")
 print("PRIMARY: ",userRunes[0])
@@ -195,25 +192,5 @@ print("")
 print("PROGRAM FINSIHED")
 
 
-
-
-
-
-#print(path1)
-#print(path2)
-
-#select(path1)
-#select(path2)
-
-#myselection = ["press the attack","overheal", "legend: bloodline", "cut Down"]
-
-#for item in runes.Secondary.sourcery.values():
-#    select(item)
-
-#for item in runes.modifyers.offense.values():
-#   select(item)
-
-#for i in range(len(myselection)):
-#    select(P.precision[myselection[i]])
     
 
