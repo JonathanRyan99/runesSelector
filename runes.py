@@ -205,7 +205,7 @@ class Bonus:
     
     flex = {
     "adaptive force" : (730,700),
-    "armour" : (810,700),
+    "armor" : (810,700),
     "magic resist" : (890,700),
     }
 
