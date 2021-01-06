@@ -12,7 +12,7 @@ def mobifireBuild(url):
 
 
 
-
+    #get primary runes
     primaryRuneBlock = runeBlock.find("div", {"class": "new-runes__primary"})
     primaryPath = primaryRuneBlock.get("path")
     primaryRunesHtml = primaryRuneBlock.find_all("span")
@@ -20,25 +20,26 @@ def mobifireBuild(url):
     for i in range(len(primaryRunesHtml)):
         primaryRunes.append(primaryRunesHtml[i].text)
 
-    primaryRunes.pop(0)
+    primaryRunes.pop(0)#first span is "" as its the Path icon on site
 
-    #print(primaryPath)
-    #print(primaryRunes)
+    
 
-    print("")
+    
 
+    #get secondary runes
     secondaryRuneBlock = runeBlock.find("div", {"class": "new-runes__secondary"})
     secondaryPath = secondaryRuneBlock.get("path")
     secondaryRunesHtml = secondaryRuneBlock.find_all("span")
     secondaryRunes = []
     for i in range(len(secondaryRunesHtml)):
         secondaryRunes.append(secondaryRunesHtml[i].text)
+    
     secondaryRunes.pop(0)
 
-
-    #print(secondaryPath)
-    #print(secondaryRunes)
-
+    #get bonus runes
+    bonusBlock = runeBlock.find("div", {"class": "new-runes__shards"})
+    bonusHtml = bonusBlock.find_all("span")
+    bonus = []
 
     bonusDict = {
         "diamond" : "adaptive force",
@@ -49,17 +50,15 @@ def mobifireBuild(url):
         "circle" : "magic resist"
     }
 
-    bonusBlock = runeBlock.find("div", {"class": "new-runes__shards"})
-    bonusHtml = bonusBlock.find_all("span")
-    bonus = []
+    
     #bonus span tags differ from acutal names so must be converted
     for i in range(len(bonusHtml)):
         bonus.append( bonusDict[bonusHtml[i].get("shard-type")] )
-    #print(bonus)
+    
 
 
 
-    #construct the input rune page for main program
+    #construct rune page for main program
 
     runePage = []
     runePage.append(primaryPath)
@@ -68,8 +67,8 @@ def mobifireBuild(url):
     runePage.extend(secondaryRunes)
     runePage.extend(bonus)
 
-    #main runes script is all lower case so conversion is necessary
+    #main runes script is all lower case 
     runePage = [element.lower() for element in runePage]
-    #print(runePage)
+    
     return runePage
 
