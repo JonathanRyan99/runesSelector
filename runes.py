@@ -46,7 +46,7 @@ class Primary:
 
         "coup de grace" : (320,760),
         "cut down" : (400,760),
-        "cast stand" : (500,760)
+        "last stand" : (500,760)
     }
     domination = {
         "electrocute" : (320,420),
@@ -132,7 +132,7 @@ class Secondary:
 
         "coup de grace" : (730,575),
         "cut down" : (810,575),
-        "cast stand" : (890,575),
+        "last stand" : (890,575),
 
     }
     domination = {
