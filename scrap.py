@@ -23,9 +23,6 @@ def mobifireBuild(url):
     primaryRunes.pop(0)#first span is "" as its the Path icon on site
 
     
-
-    
-
     #get secondary runes
     secondaryRuneBlock = runeBlock.find("div", {"class": "new-runes__secondary"})
     secondaryPath = secondaryRuneBlock.get("path")
@@ -34,7 +31,7 @@ def mobifireBuild(url):
     for i in range(len(secondaryRunesHtml)):
         secondaryRunes.append(secondaryRunesHtml[i].text)
     
-    secondaryRunes.pop(0)
+    secondaryRunes.pop(0)#first span is "" as its the Path icon on site
 
     #get bonus runes
     bonusBlock = runeBlock.find("div", {"class": "new-runes__shards"})
@@ -50,13 +47,10 @@ def mobifireBuild(url):
         "circle" : "magic resist"
     }
 
-    
     #bonus span tags differ from acutal names so must be converted
     for i in range(len(bonusHtml)):
         bonus.append( bonusDict[bonusHtml[i].get("shard-type")] )
     
-
-
 
     #construct rune page for main program
 

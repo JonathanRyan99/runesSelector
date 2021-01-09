@@ -22,6 +22,9 @@ def readfile():
 url = input("mobafire link: ")
 userRunes = scrap.mobifireBuild(url)
 
+#userRunes array structure
+#[PrimaryPath,SecondaryPath,Prune,Prune,Prune,Prune,Srune,Srune,Srune,bonus,bonus,bonus]
+
 
 #finds league window brings it to the front
 leagueWindow = win32gui.FindWindow("RCLIENT", None)
