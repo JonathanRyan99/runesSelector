@@ -45,10 +45,13 @@ print("window displacement: x:",winPos[0]," y:",winPos[1])
 
 #add window displacement to relative coords and click
 def select(coord):
-    pyautogui.moveTo( (coord[0]+winPos[0]), (coord[1]+winPos[1]) , duration= 0.5)
+    pyautogui.moveTo( (coord[0]+winPos[0]), (coord[1]+winPos[1]) , duration= 0.1)
     pyautogui.click()
 
-
+#use this if the interface/window takes time load
+def selectCustom(coord,speed):
+    pyautogui.moveTo( (coord[0]+winPos[0]), (coord[1]+winPos[1]) , duration= speed)
+    pyautogui.click()
 
 
 Path = runes.Path()
@@ -68,9 +71,9 @@ choosenSlot = (700,600)
 #opens up the rune editor
 print(" ")
 print("OPENING RUNE EDTOR")
-select(nameBar)
-select(choosenSlot)
-select(editButton)
+selectCustom(nameBar, 0.2)
+selectCustom(choosenSlot, 0.2)
+selectCustom(editButton, 0.2)
 
 
 
@@ -80,8 +83,8 @@ print("PATHS: ")
 print("PRIMARY: ",userRunes[0])
 print("SECONDARY: ",userRunes[1])
 pathPos1, pathPos2 = Path.getPaths(userRunes[0],userRunes[1])
-select(pathPos1)
-select(pathPos2)
+selectCustom(pathPos1, 0.5)
+selectCustom(pathPos2, 0.5)
 
 #select primary runes
 print("")
