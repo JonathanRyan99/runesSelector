@@ -7,6 +7,7 @@ import win32gui
 import pyautogui
 import runes
 import scrap
+import time
 
 def readfile():
     name = input("file name: ")
@@ -21,6 +22,11 @@ def readfile():
 #uses link
 url = input("mobafire link: ")
 userRunes = scrap.mobifireBuild(url)
+
+#time selection execution
+start_time = time.time()
+
+
 
 #userRunes array structure
 #[PrimaryPath,SecondaryPath,Prune,Prune,Prune,Prune,Srune,Srune,Srune,bonus,bonus,bonus]
@@ -194,6 +200,8 @@ select(exitButton)
 print("")
 print("PROGRAM FINSIHED")
 
-
+print("")
+print("--- %s seconds ---" % (time.time() - start_time))
+input("enter to close")
     
 
