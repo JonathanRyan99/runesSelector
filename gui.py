@@ -1,9 +1,19 @@
 
 import PySimpleGUI as sg
 import main
+import os
+from pathlib import Path
+
 
 sg.theme("lightGrey")
-choices = ["poppy","jinx","garen","bard"]
+
+path = Path(__file__).parent/"saves"
+files = os.listdir(path)
+choices = []
+for name in files:
+       extension = name.split(".")
+       choices.append(extension[0])
+
 
 
 layout = [  [sg.Text('Enter a MobaFire Link')],
@@ -21,7 +31,14 @@ while True:    # the event loop
         break
     if event == 'Ok':
         if values['-CHAMP-']:    # if something is highlighted in the list
-            sg.popup(f"selected: {values['-CHAMP-']}")
+            
+            name = str(values['-CHAMP-'])
+            print(name)
+            name = name[2:]
+            print(name)
+            name = name[:(len(name)-2)]
+            print(name)
+            main.readfile(name)
 
     if event == 'Build':
         if values['-USERLINK-']:
