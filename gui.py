@@ -29,7 +29,7 @@ layout = [  [sg.Text('Enter a MobaFire Link')],
             [sg.Text('MobaFire link', size=(15, 1)), sg.InputText(key='-USERLINK-'), sg.Button('Build')],
             [sg.Text('Save as ', size=(15, 1)), sg.InputText(key='-SAVENAME-') , sg.Button('Save'), ],
             [sg.Text('Pick from your saved builds')],
-            [sg.Listbox(choices, size=(15, len(choices)), key='-CHAMP-')],
+            [sg.Listbox(choices, size=(15, len(choices)), key='-CHAMP-'), sg.Output(size=(50,10), key='-OUTPUT-')],
             [sg.Button('Ok')]  ]
 
 window = sg.Window('RuneSelector', layout)
