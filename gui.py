@@ -20,7 +20,7 @@ layout = [  [sg.Text('Enter a MobaFire Link')],
             [sg.Text('MobaFire link', size=(15, 1)), sg.InputText(key='-USERLINK-'), sg.Button('Build')],
             [sg.Text('Save as ', size=(15, 1)), sg.InputText(key='-SAVENAME-') , sg.Button('Save'), ],
             [sg.Text('Pick from your saved builds')],
-            [sg.Listbox(choices, size=(15, len(choices)), key='-CHAMP-')],
+            [sg.Listbox(choices, size=(15, len(choices)), key='-CHAMP-'), sg.Output(size=(50,10), key='-OUTPUT-')],
             [sg.Button('Ok')]  ]
 
 window = sg.Window('RuneSelector', layout)
@@ -33,11 +33,9 @@ while True:    # the event loop
         if values['-CHAMP-']:    # if something is highlighted in the list
             
             name = str(values['-CHAMP-'])
-            print(name)
             name = name[2:]
-            print(name)
             name = name[:(len(name)-2)]
-            print(name)
+            print("Loading build: ", name)
             main.readfile(name)
 
     if event == 'Build':
@@ -48,7 +46,7 @@ while True:    # the event loop
     if event == 'Save':
         if values['-USERLINK-'] and values['-SAVENAME-']:
             main.saveFile(values['-SAVENAME-'],values['-USERLINK-'])
-            sg.popup(f"RunePage saved:  {values['-SAVENAME-']}")
+            sg.popup(f"RunePage saved:  {values['-SAVENAME-']} \n new entry visiable on restart")
 
 
 window.close()

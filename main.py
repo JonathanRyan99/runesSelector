@@ -219,6 +219,6 @@ def RuneBuilder(userRunes):
 
     print("")
     print("--- %s seconds ---" % (time.time() - start_time))
-    input("enter to close")
+    
         
 
