@@ -3,6 +3,8 @@
 #uses "pip install beautifulsoup4"
 #uses "pip install requests"
 import os
+import io
+from pathlib import Path
 import win32gui
 import pyautogui
 import runes
@@ -10,7 +12,9 @@ import scrap
 import time
 
 def readfile(name):
-    path = name + ".txt"
+    filepath = "saves/" + name + ".txt"
+    path = Path(__file__).parent/filepath
+    
     with open(path) as f:
         lines = f.read().splitlines()    
     RuneBuilder(lines)
@@ -18,22 +22,26 @@ def readfile(name):
 
 def saveFile(name, url):
     build = scrap.mobifireBuild(url)
-    fileName = name + ".txt"
-    outfile = open(fileName, "w")
-    print >> outfile, "\n".join(str(i) for i in build)
+    
+    filepath = "saves/" + name + ".txt"
+    path = Path(__file__).parent/filepath
+    
+    outfile = open(path, "w")
+    for i in build:
+        outfile.write(i + "\n")
     outfile.close()
 #uses file
 #userRunes = readfile()
-#userRunes = scrap.mobifireBuild(url)
 
 
+def scrapRunes(url):
+    userRunes = scrap.mobifireBuild(url)
+    return userRunes
 
-def RuneBuilder (userRunes):
+
+def RuneBuilder(userRunes):
     #time selection execution
     start_time = time.time()
-
-
-
     #userRunes array structure
     #[PrimaryPath,SecondaryPath,Prune,Prune,Prune,Prune,Srune,Srune,Srune,bonus,bonus,bonus]
 
