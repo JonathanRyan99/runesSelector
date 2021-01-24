@@ -1,6 +1,6 @@
 from bs4 import BeautifulSoup
 import requests
-#STILL MISSING MAGIC RESIST IN DICTIONARY FIND IT!!!
+
 
 def mobifireBuild(url):
 
