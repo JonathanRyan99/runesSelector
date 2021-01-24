@@ -4,6 +4,7 @@
 #uses "pip install requests"
 import os
 import io
+import sys
 from pathlib import Path
 import win32gui
 import pyautogui
@@ -11,20 +12,24 @@ import runes
 import scrap
 import time
 
-def readfile(name):
+#this is to find the local directory pyinstaller points to the archive where its made need to do this to get around it
+#look at docs for explaination "runtime-infomation"
+
+
+def readfile(name, path_to_dat):
     filepath = "saves/" + name + ".txt"
-    path = Path(__file__).parent/filepath
+    path = path_to_dat/filepath
     
     with open(path) as f:
         lines = f.read().splitlines()    
     RuneBuilder(lines)
 
 
-def saveFile(name, url):
+def saveFile(name, url, path_to_dat):
     build = scrap.mobifireBuild(url)
     
     filepath = "saves/" + name + ".txt"
-    path = Path(__file__).parent/filepath
+    path = path_to_dat/filepath
     
     outfile = open(path, "w")
     for i in build:
