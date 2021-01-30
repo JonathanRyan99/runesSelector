@@ -15,21 +15,22 @@ import time
 #this is to find the local directory pyinstaller points to the archive where its made need to do this to get around it
 #look at docs for explaination "runtime-infomation"
 
-
-def readfile(name, path_to_dat):
-    filepath = "saves/" + name + ".txt"
-    path = path_to_dat/filepath
+def readfile(name, saveDirectory):
+    filename = name + ".txt"
+    path = saveDirectory/filename
     
+    print("from file:")
     with open(path) as f:
         lines = f.read().splitlines()    
     RuneBuilder(lines)
 
 
-def saveFile(name, url, path_to_dat):
+
+def saveFile(name, url, saveDirectory):
     build = scrap.mobifireBuild(url)
     
-    filepath = "saves/" + name + ".txt"
-    path = path_to_dat/filepath
+    filename = name + ".txt"
+    path = saveDirectory/filename
     
     outfile = open(path, "w")
     for i in build:

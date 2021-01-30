@@ -9,15 +9,12 @@ from pathlib import Path
 sg.theme("lightGrey")
 
 #pyinstaller changes the cwd() when compiled so have to do this to get back to the local folder
-if getattr(sys, 'frozen', False) and hasattr(sys, '_MEIPASS'):
-    bundle_dir = Path(sys._MEIPASS)
-else:
-    bundle_dir = Path(__file__).parent
-
-path_to_dat = Path.cwd() / bundle_dir
+basedir = os.path.dirname(sys.executable)
+baseDirPath = Path(basedir)
+saveDirectoryPath = baseDirPath/"saves"
 
 
-files = os.listdir(path_to_dat/"saves")
+files = os.listdir(saveDirectoryPath)
 choices = []
 for name in files:
        extension = name.split(".")
@@ -45,7 +42,7 @@ while True:    # the event loop
             name = name[2:]
             name = name[:(len(name)-2)]
             print("Loading build: ", name)
-            main.readfile(name ,path_to_dat)
+            main.readfile(name ,saveDirectoryPath)
 
     if event == 'Build':
         if values['-USERLINK-']:
@@ -54,7 +51,7 @@ while True:    # the event loop
 
     if event == 'Save':
         if values['-USERLINK-'] and values['-SAVENAME-']:
-            main.saveFile(values['-SAVENAME-'],values['-USERLINK-'],path_to_dat)
+            main.saveFile(values['-SAVENAME-'],values['-USERLINK-'],saveDirectoryPath)
             sg.popup(f"RunePage saved:  {values['-SAVENAME-']} \n new entry visiable on restart")
 
 
