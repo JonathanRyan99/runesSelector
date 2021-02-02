@@ -10,6 +10,7 @@ import win32gui
 import pyautogui
 import runes
 import scrap
+import webbrowser
 import time
 
 #this is to find the local directory pyinstaller points to the archive where its made need to do this to get around it
@@ -36,8 +37,23 @@ def saveFile(name, url, saveDirectory):
     for i in build:
         outfile.write(i + "\n")
     outfile.close()
-#uses file
-#userRunes = readfile()
+
+
+def openLink(name, saveDirectory):
+    filename = name + ".txt"
+    path = saveDirectory/filename
+    
+    
+    with open(path) as f:
+        lines = f.read().splitlines()    
+    
+    #last thing added build is the link
+    print("Link: ", lines[(len(lines)-1)])
+    webbrowser.open(lines[(len(lines)-1)])
+
+
+
+
 
 
 def scrapRunes(url):
@@ -52,7 +68,7 @@ def RuneBuilder(userRunes):
     #[PrimaryPath,SecondaryPath,Prune,Prune,Prune,Prune,Srune,Srune,Srune,bonus,bonus,bonus]
 
 
-    #finds league window brings it to the front
+    #finds league window brings it to the front    CURRENTLY CRASHES IF IT CANT
     leagueWindow = win32gui.FindWindow("RCLIENT", None)
     win32gui.SetForegroundWindow(leagueWindow )
 

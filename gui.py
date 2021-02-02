@@ -27,7 +27,8 @@ layout = [  [sg.Text('Enter a MobaFire Link')],
             [sg.Text('Save as ', size=(15, 1)), sg.InputText(key='-SAVENAME-') , sg.Button('Save'), ],
             [sg.Text('Pick from your saved builds')],
             [sg.Listbox(choices, size=(15, len(choices)), key='-CHAMP-'), sg.Output(size=(50,10), key='-OUTPUT-')],
-            [sg.Button('Ok')]  ]
+            [sg.Button('Ok') , sg.Button('Link')]
+]
 
 window = sg.Window('RuneSelector', layout)
 
@@ -43,6 +44,15 @@ while True:    # the event loop
             name = name[:(len(name)-2)]
             print("Loading build: ", name)
             main.readfile(name ,saveDirectoryPath)
+
+    if event == 'Link':
+        if values['-CHAMP-']:    # if something is highlighted in the list
+            
+            name = str(values['-CHAMP-'])
+            name = name[2:]
+            name = name[:(len(name)-2)]
+            print("Opening build: ", name)
+            main.openLink(name ,saveDirectoryPath)
 
     if event == 'Build':
         if values['-USERLINK-']:

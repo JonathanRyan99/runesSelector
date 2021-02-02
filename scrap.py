@@ -60,9 +60,12 @@ def mobifireBuild(url):
     runePage.extend(primaryRunes)
     runePage.extend(secondaryRunes)
     runePage.extend(bonus)
+    
 
     #main runes script is all lower case 
     runePage = [element.lower() for element in runePage]
+    #url, parts can be case sensitive best to just preserve it
+    runePage.append(url)
     
     return runePage
 
