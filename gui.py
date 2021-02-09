@@ -8,10 +8,20 @@ from pathlib import Path
 
 sg.theme("lightGrey")
 
-#pyinstaller changes the cwd() when compiled so have to do this to get back to the local folder
-basedir = os.path.dirname(sys.executable)
-baseDirPath = Path(basedir)
-saveDirectoryPath = baseDirPath/"saves"
+#executables expand into temp folder, this changes the relative position of the program
+if getattr(sys, 'frozen', False):
+    #fire when excuted from a onefile
+    basedir = os.path.dirname(sys.executable) # this points to the directory that the executable was launched from
+    baseDirPath = Path(basedir)
+    saveDirectoryPath = baseDirPath/"saves"
+else:
+    #this fires when run from console
+    basedir = os.path.dirname(os.path.abspath(__file__)) 
+    baseDirPath = Path(basedir)
+    saveDirectoryPath = baseDirPath/"saves"
+    
+
+
 
 
 files = os.listdir(saveDirectoryPath)

@@ -110,7 +110,7 @@ class Primary:
         "magical footwear" : (400,540),
         "perfect timing" : (500,540),
 
-        "future market"	: (320,	650),
+        "future's market"	: (320,	650),
         "minion dematerializer": (400,650),
         "biscuit delivery": (500,650),
 
@@ -186,7 +186,7 @@ class Secondary:
         "magical footwear" : (810,380),
         "perfect timing" : (890,380),
 
-        "future market"	: (730,480),
+        "future's market"	: (730,480),
         "minion dematerializer": (810,480),
         "biscuit delivery": (890,480),
 
