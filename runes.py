@@ -62,7 +62,7 @@ class Primary:
         "ghost poro" :	(400,650),
         "eyeball collection" : (500,650),
 
-        "ravenous hunter" :	(320,760),
+        "treasure hunter" :	(320,760),
         "ingenious hunter" : (380,760),
         "relentless hunter" :	(440,760),
         "ultimate hunter" :	(500,760)
@@ -104,7 +104,7 @@ class Primary:
     inspiration = {
         "glacial augment" :	(320,420),
         "unsealed spellbook" : (400,420),
-        "prototype: omnistone" : (500,420),
+        "first strike" : (500,420),
 
         "hextech flashtraption" : (320,540),
         "magical footwear" : (400,540),
@@ -144,7 +144,7 @@ class Secondary:
         "ghost poro" :	(810,480),
         "eyeball collection" : (890,480),
 
-        "ravenous hunter" :	(720,575),
+        "treasure hunter" :	(720,575),
         "ingenious hunter" : (780,575),
         "relentless hunter" : (850,575),
         "ultimate hunter" :	(910,575)

@@ -1,3 +1,6 @@
-__pycache__/
-.vscode
-runeImage.ico
+env
+saves
+__pycache__
+RuneSelector.exe
+install_env.bat
+

@@ -2,63 +2,15 @@
 #uses "pip install PyAutoGUI"
 #uses "pip install beautifulsoup4"
 #uses "pip install requests"
-import os
-import io
-import sys
-from pathlib import Path
+
+import pywintypes # Not used, but need it for win32gui to import correctly
 import win32gui
 import pyautogui
 import runes
-import scrap
-import webbrowser
 import time
 
 #this is to find the local directory pyinstaller points to the archive where its made need to do this to get around it
 #look at docs for explaination "runtime-infomation"
-
-def readfile(name, saveDirectory):
-    filename = name + ".txt"
-    path = saveDirectory/filename
-    
-    print("from file:")
-    with open(path) as f:
-        lines = f.read().splitlines()    
-    RuneBuilder(lines)
-
-
-
-def saveFile(name, url, saveDirectory):
-    build = scrap.mobifireBuild(url)
-    
-    filename = name + ".txt"
-    path = saveDirectory/filename
-    
-    outfile = open(path, "w")
-    for i in build:
-        outfile.write(i + "\n")
-    outfile.close()
-
-
-def openLink(name, saveDirectory):
-    filename = name + ".txt"
-    path = saveDirectory/filename
-    
-    
-    with open(path) as f:
-        lines = f.read().splitlines()    
-    
-    #last thing added build is the link
-    print("Link: ", lines[(len(lines)-1)])
-    webbrowser.open(lines[(len(lines)-1)])
-
-
-
-
-
-
-def scrapRunes(url):
-    userRunes = scrap.mobifireBuild(url)
-    return userRunes
 
 
 def RuneBuilder(userRunes):
