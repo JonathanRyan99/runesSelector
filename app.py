@@ -165,13 +165,15 @@ class GUI:
     def open_link(self):
         if self.selected_build !="":
             file_path = self.save_folder_path / (self.selected_build + ".txt")
+            print(f"opening file path: {file_path}")
             if (file_path).exists():
+                print("file found")
                 build_params = []
                 file = open( file_path ,"r")
                 for line in file:
                     #build_params.append(line[:-1]) #removes \n at end (dont strip cuz urls are used)
                     build_params.append(line.strip()) #urls dont use \ should just target whitespace
-                if (len(build_params) != 0) and ("mobafire" in build_params[len(build_params)-1]):
+                if (len(build_params) != 0) and ("http" in build_params[len(build_params)-1]):
                     url = build_params[len(build_params)-1]
                     print("opening link: " + url)
                     webbrowser.open(url)
