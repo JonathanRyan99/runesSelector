@@ -73,7 +73,7 @@ class GUI:
         self.quick_build_var = StringVar()
         self.quick_build_var.set("")
         self.quick_build_entry = Entry(self.bottomFrame, textvariable= self.quick_build_var, width=30)
-        self.quick_build_button = Button(self.bottomFrame, text="Quick Build", command=self.quick_build_page)
+        self.quick_build_button = Button(self.bottomFrame, text="MOBAFIRE Quick Build", command=self.quick_build_page)
 
         #quick save widgets
         self.quick_save_var = StringVar()
