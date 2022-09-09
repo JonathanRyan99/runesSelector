@@ -1,0 +1,1 @@
+C:\Users\Jonny\Desktop\projects\runesSelector\env\Scripts\activate.bat & python app.py

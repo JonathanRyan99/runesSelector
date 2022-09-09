@@ -1,5 +1,5 @@
 
-import pywintypes # Not used, but need it for win32gui to import correctly
+#import pywintypes # Not used, but need it for win32gui to import correctly
 import win32gui
 import pyautogui
 import runes
@@ -180,7 +180,7 @@ def RuneBuilder(userRunes):
     print("SAVE AND EXIT")
     select(save)
     select(exitButton)
-    select(acceptChanges)
+    #select(acceptChanges) outside of aram this ends up picking a different champ
 
 
     print("")
