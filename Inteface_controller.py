@@ -1,16 +1,9 @@
-#uses"pip install pywin32"
-#uses "pip install PyAutoGUI"
-#uses "pip install beautifulsoup4"
-#uses "pip install requests"
 
-import pywintypes # Not used, but need it for win32gui to import correctly
+#import pywintypes # Not used, but need it for win32gui to import correctly
 import win32gui
 import pyautogui
 import runes
 import time
-
-#this is to find the local directory pyinstaller points to the archive where its made need to do this to get around it
-#look at docs for explaination "runtime-infomation"
 
 
 def RuneBuilder(userRunes):
@@ -55,6 +48,7 @@ def RuneBuilder(userRunes):
     editButton = (550,860)
     nameBar = (702,850)
     choosenSlot = (700,600)
+    acceptChanges = (750,490)
 
     #opens up the rune editor
     print(" ")
@@ -186,6 +180,7 @@ def RuneBuilder(userRunes):
     print("SAVE AND EXIT")
     select(save)
     select(exitButton)
+    #select(acceptChanges) outside of aram this ends up picking a different champ
 
 
     print("")
